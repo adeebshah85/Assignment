@@ -4,7 +4,7 @@
       <h4>List of Blogs</h4>
     </div>
     <div class="mtuff">
-      <label for="status">Filter: </label>
+      <label for="status">Filter:</label>
       <select id="status" v-model="fylter" name="Status">
         <option value="published">published</option>
         <option value="draft">draft</option>
@@ -12,11 +12,11 @@
       </select>
     </div>
     <div class="muff">
-      <select id="date" name="Date">
-        <option value="">2017</option>
-        <option value="saab">2016</option>
-        <option value="fiat">2015</option>
-        <option value="audi">2020</option>
+      <select id="date" v-model="filterByDate" name="Date">
+        <option value="2017">2017</option>
+        <option value="2016">2016</option>
+        <option value="2015">2015</option>
+        <option value="2020">2020</option>
       </select>
     </div>
     <table>
@@ -45,19 +45,27 @@ export default {
   data: function() {
     return {
       posts: [],
-      fylter: ""
+      fylter: "",
+      filterByDate: ""
     };
   },
   mounted() {
     axios
       .get("https://my-json-server.typicode.com/orzel-bielik/test/posts")
-      .then(res => (this.posts = res.data))
+      .then(res => {
+        this.posts = res.data;
+        console.log(res.data);
+      })
       .catch(err => console.log(err));
   },
   computed: {
     filteredPosts: function() {
       return this.posts.filter(post => {
-        return post.status.match(this.fylter);
+        if (this.fylter || this.filterByDate) {
+          const [date] = post.date.split(" ");
+          return new Date(date).getFullYear() === +this.filterByDate || post.status.match(this.fylter);
+        }
+        return true;
       });
     }
   }
@@ -135,7 +143,7 @@ select {
   background: rgb(230, 229, 229);
   color: black;
 }
-.main{
+.main {
   position: relative;
   right: 200px;
   bottom: 50px;
