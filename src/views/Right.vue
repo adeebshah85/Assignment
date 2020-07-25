@@ -58,15 +58,33 @@
 
             <!-- Followers and stuff -->
         
-
+        
         <!-- Footer of the Right Side of the web page -->
-            
+            <div>
+              
+            </div>
             <div class="card-right">
                 <span class="material-icons">
                     <i class="fa fa-arrow-right" aria-hidden="true"></i>
                 </span>
             </div>
         </div>
+
+
+        <div class="followers-wrapper">
+        <div class="follow-heading"><h4 class="follow-head">Followers</h4></div><div class="view-all-div"><p class="view-all">View All</p>
+        </div>
+
+            <a class="followers" href ="#"> <img class="follower-img" src= "https://i.pinimg.com/236x/8d/f7/ab/8df7abc755a433879cc8197aca798a0e.jpg"/>  </a>
+            <a class="followers" href ="#"> <img class="follower-img" src="https://i.pinimg.com/236x/2d/0a/c5/2d0ac5f5a8380ba790cb88845ea4484c.jpg" /> </a>
+            <a class="followers" href ="#"> <img class="follower-img" src="https://i.pinimg.com/236x/d6/f8/14/d6f814dfb3a5d372fa8eab3558f35047.jpg" /> </a>
+            <a class="followers" href ="#">  <img class="follower-img" src="https://i.pinimg.com/236x/74/f5/a0/74f5a0511beb735dae7350f1526ff215.jpg" /></a>
+        </div>
+
+
+
+
+
         <div class="banner">
             <span class="description">Buy <span class="emphasis">Pro Account</span>
                 to Explore Premium Features</span>
@@ -75,6 +93,9 @@
             </button>
             
         </div>
+
+         
+
     </div>
     </div>
 </template>
@@ -106,7 +127,7 @@ button:active {
 
 .card {
   width: 100%;
-  height: 70px;
+  height: 60px;
   background-color: white;
   border-radius: 15px;
   display: flex;
@@ -203,5 +224,82 @@ button:active {
 .img{
     border-radius: 30%;
 }
+
+
+.followers-this-week{
+  background-color: #e0e2e4
+}
+.follower-img{
+  box-shadow: 5px;
+  width:80px;
+  height: 80px;
+  border-radius: 20%;
+  box-shadow: rgba(0, 0, 0, 0.12);
+  padding: 5px;
+}
+.follower-img:hover{
+  transform: scale(1.1);
+  transition-duration:1s;
+}
+.follower-img{
+  box-shadow: 5px;
+  width:80px;
+  height: 80px;
+  border-radius: 20%;
+  box-shadow: rgba(0, 0, 0, 0.12);
+  padding: 5px;
+}
+.follower-img:hover{
+  transform: scale(1.1);
+  transition-duration:1s;
+}
+.followers-wrapper{
+  position: relative;
+  bottom:25px;
+}
+
+.follower-img{
+  box-shadow: 5px;
+  width:80px;
+  height: 80px;
+  border-radius: 20%;
+  box-shadow: rgba(0, 0, 0, 0.12);
+  padding: 5px;
+}
+.follower-img:hover{
+  transform: scale(1.1);
+  transition-duration:1s;
+}
+
+.follow-heading{
+  height: 50px;
+  width: 50%;
+  float: left;
+}
+
+.follow-head{
+  float: left;
+  position: relative;
+  left: 8px;
+}
+
+.view-all-div{
+  height: 50px;
+  width: 50%;
+  float: right;
+}
+
+.view-all{
+  float: right;
+  position: relative;
+  top:7px;
+  right: 20px;
+}
+.move{
+  position: relative;
+  top: 40px;
+}
+
+
 
 </style>
