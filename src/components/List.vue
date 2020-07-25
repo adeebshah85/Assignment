@@ -6,6 +6,7 @@
     <div class="mtuff">
       <label for="status">Filter:</label>
       <select id="status" v-model="fylter" name="Status">
+      <option value="" disabled selected>Status</option>
         <option value="published">published</option>
         <option value="draft">draft</option>
         <option value="deactivated">deactivated</option>
@@ -13,6 +14,7 @@
     </div>
     <div class="muff">
       <select id="date" v-model="filterByDate" name="Date">
+      <option value="" disabled selected>Date</option>
         <option value="2017">2017</option>
         <option value="2016">2016</option>
         <option value="2015">2015</option>
