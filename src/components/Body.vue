@@ -88,6 +88,10 @@
   margin: 10px;
   float: left;
 }
+.b2{
+  background: black;
+  color: #fff;
+}
 .blog:hover{
   transform: scale(1.05);
   transition-duration:1s;
